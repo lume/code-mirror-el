@@ -1,0 +1,82 @@
+{
+	"name": "code-mirror-el",
+	"version": "0.0.0",
+	"description": "A `<code-mirror>` custom element for declarative manipulation of CodeMirror.",
+	"license": "MIT",
+	"homepage": "http://github.com/lume/code-mirror-element#readme",
+	"type": "module",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"LUME SCRIPTS XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX": "",
+		"clean": "lume clean",
+		"build": "lume build",
+		"dev": "lume dev",
+		"typecheck": "lume typecheck",
+		"typecheck:watch": "lume typecheckWatch",
+		"test": "lume test",
+		"test:watch": "lume test --watch",
+		"prettier": "lume prettier",
+		"prettier:check": "lume prettierCheck",
+		"release:patch": "lume releasePatch",
+		"release:minor": "lume releaseMinor",
+		"release:major": "lume releaseMajor",
+		"version": "lume versionHook",
+		"postversion": "lume postVersionHook",
+		"OTHER SCRIPTS XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX": "",
+		"examples": "five-server . --open=examples"
+	},
+	"dependencies": {
+		"@babel/runtime": "^7.0.0",
+		"@codemirror/lang-html": "^6.0.0",
+		"@codemirror/lang-javascript": "^6.0.0",
+		"@codemirror/language": "^6.0.0",
+		"@codemirror/state": "^6.0.0",
+		"@codemirror/view": "^6.0.0",
+		"@lume/element": "^0.11.0",
+		"@uiw/codemirror-theme-noctis-lilac": "^4.0.0",
+		"classy-solid": "^0.3.0",
+		"codemirror": "^6.0.0",
+		"solid-js": "^1.0.0"
+	},
+	"devDependencies": {
+		"@codemirror/theme-one-dark": "^6.1.2",
+		"@lume/cli": "^0.11.0",
+		"@types/react": "^17.0.0",
+		"five-server": "^0.3.1",
+		"lowclass": "^7.0.0",
+		"prettier": "3.0.3",
+		"typescript": "^5.0.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/lume/element.git"
+	},
+	"bugs": {
+		"url": "https://github.com/lume/element/issues"
+	},
+	"keywords": [
+		"custom elements",
+		"custom-elements",
+		"web components",
+		"web-components",
+		"html",
+		"shadowdom",
+		"shadow-dom",
+		"ui",
+		"ui components",
+		"ui-components",
+		"frp",
+		"functional reactive programming",
+		"functional-reactive-programming",
+		"reactive programming",
+		"reactive-programming",
+		"reactive coding",
+		"reactive-coding",
+		"reactive variables",
+		"reactive-variables",
+		"reactivity",
+		"reactive computation",
+		"reactive-computation"
+	]
+}

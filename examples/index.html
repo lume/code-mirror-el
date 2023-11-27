@@ -1,0 +1,218 @@
+<script type="importmap">
+	{
+		"imports": {
+			"@babel/runtime/helpers/extends": "../node_modules/@babel/runtime/helpers/esm/extends.js",
+			"@codemirror/autocomplete": "../node_modules/@codemirror/autocomplete/dist/index.js",
+			"@codemirror/commands": "../node_modules/@codemirror/commands/dist/index.js",
+			"@codemirror/lang-css": "../node_modules/@codemirror/lang-css/dist/index.js",
+			"@codemirror/lang-html": "../node_modules/@codemirror/lang-html/dist/index.js",
+			"@codemirror/lang-javascript": "../node_modules/@codemirror/lang-javascript/dist/index.js",
+			"@codemirror/language": "../node_modules/@codemirror/language/dist/index.js",
+			"@codemirror/lint": "../node_modules/@codemirror/lint/dist/index.js",
+			"@codemirror/search": "../node_modules/@codemirror/search/dist/index.js",
+			"@codemirror/state": "../node_modules/@codemirror/state/dist/index.js",
+			"@codemirror/theme-one-dark": "../node_modules/@codemirror/theme-one-dark/dist/index.js",
+			"@codemirror/view": "../node_modules/@codemirror/view/dist/index.js",
+			"@lezer/common": "../node_modules/@lezer/common/dist/index.js",
+			"@lezer/css": "../node_modules/@lezer/css/dist/index.js",
+			"@lezer/highlight": "../node_modules/@lezer/highlight/dist/index.js",
+			"@lezer/html": "../node_modules/@lezer/html/dist/index.js",
+			"@lezer/javascript": "../node_modules/@lezer/javascript/dist/index.js",
+			"@lezer/lr": "../node_modules/@lezer/lr/dist/index.js",
+			"@lume/element": "../node_modules/@lume/element/dist/index.js",
+			"@uiw/codemirror-theme-noctis-lilac": "../node_modules/@uiw/codemirror-theme-noctis-lilac/esm/index.js",
+			"@uiw/codemirror-themes": "../node_modules/@uiw/codemirror-themes/esm/index.js",
+			"classy-solid": "../node_modules/classy-solid/dist/index.js",
+			"code-mirror-element": "../dist/index.js",
+			"codemirror": "../node_modules/codemirror/dist/index.js",
+			"crelt": "../node_modules/crelt/index.js",
+			"lodash-es/": "../node_modules/lodash-es/",
+			"lowclass": "../node_modules/lowclass/dist/index.js",
+			"solid-js": "../node_modules/solid-js/dist/solid.js",
+			"solid-js/html": "../node_modules/solid-js/html/dist/html.js",
+			"solid-js/web": "../node_modules/solid-js/web/dist/web.js",
+			"style-mod": "../node_modules/style-mod/src/style-mod.js",
+			"thememirror/": "../node_modules/thememirror/",
+			"w3c-keyname": "../node_modules/w3c-keyname/index.js"
+		}
+	}
+</script>
+
+<script type="module">
+	import 'code-mirror-element'
+</script>
+
+<style>
+	code-mirror {
+		/* If you don't give it a height, it'll take up full height of its parent by default. */
+		height: 100px;
+	}
+</style>
+
+<h2>Editor with minimal setup, just plain text:</h2>
+
+<code-mirror content="Hello there! This is a plain text without any features, not even undo/redo!"></code-mirror>
+
+<h2>Editor with CodeMirror's <code>basicSetup()</code> including autocomplete, with built-in html syntax.</h2>
+
+<code-mirror
+	basic-setup
+	language="html"
+	content="
+		<h1>Hello there!</h1>
+		<p>This is HTML content, with basic features including autocomplete of HTML elements</p>
+	"
+></code-mirror>
+
+<h2>Editor with format as-written</h2>
+
+<p>
+	Use <code>strip-indent="false"</code> and <code>trim="false"</code> if you wish to keep the spacing inside the
+	<code>content</code> attribute as-is:
+</p>
+
+<code-mirror
+	basic-setup
+	language="html"
+	strip-indent="false"
+	trim="false"
+	content="
+		<h1>Hello there!</h1>
+		<p>This is HTML content, with basic features including autocomplete of HTML elements</p>
+	"
+></code-mirror>
+
+<h2>Editor with built-in JavaScript syntax:</h2>
+
+<code-mirror
+	basic-setup
+	language="js"
+	content="
+		if (true) {
+			console.log('Hello there!')
+			console.log('This is JavaScript content, with a basic setup including snippet autocompletion (try typing function then autocomplete).')
+		}
+	"
+></code-mirror>
+
+<h2>Editor with a <code>&lt;template&gt;</code></h2>
+
+<p>
+	A <code>&lt;template&gt;</code> element can be used instead of a content attribute to make writing the code more
+	convenient. If the language is html, the content of the template will be taken as is. If the language is JS, the
+	content will be taken from the first script child of the template:
+</p>
+
+<code-mirror basic-setup language="js">
+	<template>
+		<script>
+			if (true) {
+				console.log('Hello there!')
+				console.log('This is JavaScript content, with a basic setup including snippet autocompletion.')
+			}
+		</script>
+	</template>
+</code-mirror>
+
+<h2>Editor with theme</h2>
+
+<p>
+	The default theme is Noctis Lilac. Change the theme extension by supplying a theme via the
+	<code>theme</code> property. Here we supply the theme from <code>@codemirror/theme-one-dark</code>:
+</p>
+
+<code-mirror id="themedEditor" basic-setup language="html">
+	<template>
+		<h1>Hello there!</h1>
+		<p>This is HTML content, with basic features including autocomplete of HTML elements</p>
+	</template>
+</code-mirror>
+
+<script type="module">
+	import {oneDark} from '@codemirror/theme-one-dark'
+	const editor = document.getElementById('themedEditor')
+	editor.theme = oneDark
+</script>
+
+<h2>Editor with a custom CSS string</h2>
+
+<p>
+	The `stylesheet` attribute accepts a string of CSS that gets applied inside the code-mirror element's ShadowRoot. This
+	is useful for overriding any of CodeMirror's default styles (or those of a theme you may have loaded). Here we
+	override the active line color:
+</p>
+
+<code-mirror
+	id="styled1"
+	basic-setup
+	language="html"
+	stylesheet="
+		.cm-activeLine {
+			background: hsla(0, 60%, 80%, 0.2) !important;
+		}
+	"
+>
+	<template>
+		<h1>Hello there!</h1>
+		<p>This is HTML content, with basic features including autocomplete of HTML elements</p>
+	</template>
+</code-mirror>
+
+<script type="module">
+	import {oneDark} from '@codemirror/theme-one-dark'
+	const editor = document.getElementById('styled1')
+	editor.theme = oneDark
+</script>
+
+<h2>Editors with custom stylesheet instances</h2>
+
+<p>
+	The `stylesheet` property accepts HTMLStyleSheet, HTMLLinkElement, and CSSStyleSheet instances. Here we show one
+	editor with a &lt;style&gt; element passed in, and one with a CSSStyleSheet passed in, both achieving the same effect
+	as the previous example. This can be useful for picking styles that already exist in the document and passing them
+	along, or importing CSS modules and passing those along, for example.
+</p>
+
+<code-mirror id="styled2" basic-setup language="html">
+	<template>
+		<h1>Hello there!</h1>
+		<p>This is HTML content, with basic features including autocomplete of HTML elements</p>
+	</template>
+</code-mirror>
+
+<script type="module">
+	import {oneDark} from '@codemirror/theme-one-dark'
+	const editor = document.getElementById('styled2')
+	editor.theme = oneDark
+
+	const style = document.createElement('style')
+	style.textContent = /*css*/ `
+		.cm-activeLine {
+			background: hsla(0, 60%, 80%, 0.2) !important;
+		}
+	`
+	editor.stylesheet = style
+</script>
+
+<br />
+
+<code-mirror id="styled3" basic-setup language="html">
+	<template>
+		<h1>Hello there!</h1>
+		<p>This is HTML content, with basic features including autocomplete of HTML elements</p>
+	</template>
+</code-mirror>
+
+<script type="module">
+	import {oneDark} from '@codemirror/theme-one-dark'
+	const editor = document.getElementById('styled3')
+	editor.theme = oneDark
+
+	const style = new CSSStyleSheet()
+	style.replaceSync(/*css*/ `
+		.cm-activeLine {
+			background: hsla(0, 60%, 80%, 0.2) !important;
+		}
+	`)
+	editor.stylesheet = style
+</script>
