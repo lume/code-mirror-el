@@ -36,8 +36,6 @@ Use `<code-mirror>` to create a text editor:
 For more usage examples, see [./examples/index.html](./examples/index.html). To
 run the examples, clone the repo, then run `npm install && npm run examples`.
 
-## Intro
-
 <details><summary><h2>Install and Setup</h2></summary>
 
 > **STUB:** This section needs expansion, but should be enough for anyone
@@ -243,7 +241,3 @@ with templating and reactivity powered by Solid.js. Also see
 https://solid.js.com, https://primitives.solidjs.community, and
 https://github.com/lume/classy-solid for APIs that are useful with
 `@lume/element`.
-
-## Status
-
-![](https://github.com/lume/element/workflows/Build%20and%20Test/badge.svg)
