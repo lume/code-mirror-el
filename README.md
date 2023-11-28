@@ -5,11 +5,10 @@ in systems like Lit, React, Vue, Svelte, Solid, and others.
 
 <h4><code><strong>npm install @lume/element</strong></code></h4>
 
-<!--
 ## Live demos
 
-- [Example on CodePen]()
--->
+- [Example on CodePen](https://codepen.io/trusktr/pen/poGZYOy?editors=1000)
+- [Examples in Lume's Docs](https://docs.lume.io)
 
 ## Usage Example
 
@@ -51,10 +50,9 @@ Follow the guide on [installing `lume` from
 CDN](https://docs.lume.io/guide/install/?id=cdn-easiest), but simply replace
 `lume` with `code-mirror-element`. The process is otherwise the same.
 
-<!--
-TODO:
-Here's a live example on CodePen based on those instructions
- -->
+Here's a [live example on
+CodePen](https://codepen.io/trusktr/pen/poGZYOy?editors=1000) based on those
+instructions.
 
 </details>
 
