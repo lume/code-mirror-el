@@ -20,11 +20,11 @@ Use `<code-mirror>` to create a text editor:
 	basic-setup
 	language="html"
 	stylesheet="
-    /* Override the active line background color. */
-    .cm-activeLine {
-      background-color: #ff660044 !important
-    }
-  "
+		/* Override the active line background color. */
+		.cm-activeLine {
+			background-color: #ff660044 !important
+		}
+	"
 >
 	<template>
 		<h1>This is HTML content that will appear in the text editor.</h1>
