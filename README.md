@@ -48,7 +48,7 @@ run the examples, clone the repo, then run `npm install && npm run examples`.
 
 Follow the guide on [installing `lume` from
 CDN](https://docs.lume.io/guide/install/?id=cdn-easiest), but simply replace
-`lume` with `code-mirror-element`. The process is otherwise the same.
+`lume` with `code-mirror-el`. The process is otherwise the same.
 
 Here's a [live example on
 CodePen](https://codepen.io/trusktr/pen/poGZYOy?editors=1000) based on those
@@ -62,16 +62,16 @@ This assumes some familiarity with command lines and JavScript build tools.
 
 First make sure you've installed Node.js so that we have the `npm` package manager avaiable.
 
-Install the `code-mirror-element` package using the following in a terminal:
+Install the `code-mirror-el` package using the following in a terminal:
 
 ```sh
-npm install code-mirror-element
+npm install code-mirror-el
 ```
 
 Now, `import` into your project and start using the element in HTML, JSX, `html` template tags, etc.
 
 ```js
-import 'code-mirror-element'
+import 'code-mirror-el'
 
 // Ready to use
 ```
@@ -79,7 +79,7 @@ import 'code-mirror-element'
 Optionally import the classes (especially useful for type annotations in TypeScript).
 
 ```js
-import {CodeMirror, CodeMirrorContentchangedEvent} from 'code-mirror-element'
+import {CodeMirror, CodeMirrorContentchangedEvent} from 'code-mirror-el'
 
 const editor = document.querySelector('#editor') as CodeMirror
 
@@ -94,17 +94,19 @@ editor.addEventListener('contentchanged', (event: CodeMirrorContentchangedEvent)
 
 ## Basic Usage
 
+See the [example on CodePen](https://codepen.io/trusktr/pen/poGZYOy?editors=1000).
+
 ## TypeScript
 
 ### With Solid.js JSX
 
 If you've configured [Solid.js](https://solidjs.com) for use with TypeScript,
-then simply importing `code-mirror-element` will register the JSX types for use
+then simply importing `code-mirror-el` will register the JSX types for use
 in Solid.js JSX templates.
 
 ```tsx
 import {createSignal} from 'solid-js'
-import 'code-mirror-element' // This is all that is needed.
+import 'code-mirror-el' // This is all that is needed.
 
 function SomeComponent() {
 	const [content, setContent] = createSignal('...')
@@ -126,8 +128,8 @@ global JSX types for non-React users, we do not automatically register them
 
 ```tsx
 import {useState, useRef, useEffect} from 'react'
-import 'code-mirror-element'
-import type {} from 'code-mirror-element/src/CodeMirror.react-jsx' // Import types specifically for React
+import 'code-mirror-el'
+import type {} from 'code-mirror-el/src/CodeMirror.react-jsx' // Import types specifically for React
 
 function SomeComponent() {
 	const [content, setContent] = useState('...')
