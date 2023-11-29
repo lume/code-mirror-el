@@ -24,7 +24,7 @@ module.exports = {
 			'@uiw/codemirror-theme-noctis-lilac': '/node_modules/@uiw/codemirror-theme-noctis-lilac/esm/index.js',
 			'@uiw/codemirror-themes': '/node_modules/@uiw/codemirror-themes/esm/index.js',
 			'classy-solid': '/node_modules/classy-solid/dist/index.js',
-			'code-mirror-element': '/dist/index.js',
+			'code-mirror-el': '/dist/index.js',
 			codemirror: '/node_modules/codemirror/dist/index.js',
 			crelt: '/node_modules/crelt/index.js',
 			'lodash-es/': '/node_modules/lodash-es/',
