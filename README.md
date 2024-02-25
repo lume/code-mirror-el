@@ -180,7 +180,7 @@ Defaults to "js".
 
 #### `stylesheet`
 
-CSS styles to apply in <code-mirror>'s ShadowRoot. Useful for overriding
+CSS styles to apply in `<code-mirror>`'s ShadowRoot. Useful for overriding
 CM styles. Defaults to a style that hard codes the activeLine style to
 overcome issues with selections not being visible on the active line
 (https://github.com/vadimdemedes/thememirror/issues/8).
