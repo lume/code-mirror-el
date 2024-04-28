@@ -4,10 +4,15 @@ import { LanguageSupport } from '@codemirror/language';
 import { type Extension } from '@codemirror/state';
 export type CodeMirrorAttributes = 'basicSetup' | 'content' | 'stripIndent' | 'trim' | 'language' | 'stylesheet' | 'theme' | 'extensions';
 declare const CodeMirror_base: (new (...a: any[]) => {
-    "__#1@#owner": import("solid-js").Owner | null;
-    "__#1@#dispose": (() => void) | null;
+    "__#1@#effects": Set<import("classy-solid").Effect>;
     createEffect(fn: () => void): void;
     stopEffects(): void;
+    "__#1@#createEffect1"(fn: () => void): void;
+    "__#1@#stopEffects1"(): void;
+    "__#1@#owner": import("solid-js").Owner | null;
+    "__#1@#dispose": (() => void) | null;
+    "__#1@#createEffect2"(fn: () => void): void;
+    "__#1@#stopEffects2"(): void;
 }) & typeof Element;
 export declare class CodeMirror extends CodeMirror_base {
     #private;
