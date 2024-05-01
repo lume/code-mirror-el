@@ -1,7 +1,10 @@
 # `<code-mirror>` element
 
-A `<code-mirror>` element for manipulating CodeMirror declaratively in HTML or
-in systems like Lit, React, Vue, Svelte, Solid, and others.
+A customizeable `<code-mirror>` element that makes a code editor powered by CodeMirror.
+
+<img width="624" alt="Screenshot 2024-05-01 at 4 21 26 PM" src="https://github.com/lume/code-mirror-el/assets/297678/b5176d8a-7029-4683-b741-2eab641677f9">
+
+Use it declaratively in plain HTML, or with web frameworks and libraries like Lit, Vue, Svelte, Solid.js, Angular, Ember, jQuery, React, and all others.
 
 <h4><code><strong>npm install @lume/element</strong></code></h4>
 
