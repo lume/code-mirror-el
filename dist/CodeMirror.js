@@ -50,23 +50,30 @@ let CodeMirror = (() => {
     let _classExtraInitializers = [];
     let _classThis;
     let _classSuper = Effectful(Element);
-    let _instanceExtraInitializers = [];
     let _basicSetup_decorators;
     let _basicSetup_initializers = [];
+    let _basicSetup_extraInitializers = [];
     let _content_decorators;
     let _content_initializers = [];
+    let _content_extraInitializers = [];
     let _stripIndent_decorators;
     let _stripIndent_initializers = [];
+    let _stripIndent_extraInitializers = [];
     let _trim_decorators;
     let _trim_initializers = [];
+    let _trim_extraInitializers = [];
     let _language_decorators;
     let _language_initializers = [];
+    let _language_extraInitializers = [];
     let _stylesheet_decorators;
     let _stylesheet_initializers = [];
+    let _stylesheet_extraInitializers = [];
     let _theme_decorators;
     let _theme_initializers = [];
+    let _theme_extraInitializers = [];
     let _extensions_decorators;
     let _extensions_initializers = [];
+    let _extensions_extraInitializers = [];
     var CodeMirror = class extends _classSuper {
         static { _classThis = this; }
         static {
@@ -79,25 +86,33 @@ let CodeMirror = (() => {
             _stylesheet_decorators = [stringAttribute];
             _theme_decorators = [signal];
             _extensions_decorators = [signal];
-            __esDecorate(null, null, _basicSetup_decorators, { kind: "field", name: "basicSetup", static: false, private: false, access: { has: obj => "basicSetup" in obj, get: obj => obj.basicSetup, set: (obj, value) => { obj.basicSetup = value; } }, metadata: _metadata }, _basicSetup_initializers, _instanceExtraInitializers);
-            __esDecorate(null, null, _content_decorators, { kind: "field", name: "content", static: false, private: false, access: { has: obj => "content" in obj, get: obj => obj.content, set: (obj, value) => { obj.content = value; } }, metadata: _metadata }, _content_initializers, _instanceExtraInitializers);
-            __esDecorate(null, null, _stripIndent_decorators, { kind: "field", name: "stripIndent", static: false, private: false, access: { has: obj => "stripIndent" in obj, get: obj => obj.stripIndent, set: (obj, value) => { obj.stripIndent = value; } }, metadata: _metadata }, _stripIndent_initializers, _instanceExtraInitializers);
-            __esDecorate(null, null, _trim_decorators, { kind: "field", name: "trim", static: false, private: false, access: { has: obj => "trim" in obj, get: obj => obj.trim, set: (obj, value) => { obj.trim = value; } }, metadata: _metadata }, _trim_initializers, _instanceExtraInitializers);
-            __esDecorate(null, null, _language_decorators, { kind: "field", name: "language", static: false, private: false, access: { has: obj => "language" in obj, get: obj => obj.language, set: (obj, value) => { obj.language = value; } }, metadata: _metadata }, _language_initializers, _instanceExtraInitializers);
-            __esDecorate(null, null, _stylesheet_decorators, { kind: "field", name: "stylesheet", static: false, private: false, access: { has: obj => "stylesheet" in obj, get: obj => obj.stylesheet, set: (obj, value) => { obj.stylesheet = value; } }, metadata: _metadata }, _stylesheet_initializers, _instanceExtraInitializers);
-            __esDecorate(null, null, _theme_decorators, { kind: "field", name: "theme", static: false, private: false, access: { has: obj => "theme" in obj, get: obj => obj.theme, set: (obj, value) => { obj.theme = value; } }, metadata: _metadata }, _theme_initializers, _instanceExtraInitializers);
-            __esDecorate(null, null, _extensions_decorators, { kind: "field", name: "extensions", static: false, private: false, access: { has: obj => "extensions" in obj, get: obj => obj.extensions, set: (obj, value) => { obj.extensions = value; } }, metadata: _metadata }, _extensions_initializers, _instanceExtraInitializers);
+            __esDecorate(null, null, _basicSetup_decorators, { kind: "field", name: "basicSetup", static: false, private: false, access: { has: obj => "basicSetup" in obj, get: obj => obj.basicSetup, set: (obj, value) => { obj.basicSetup = value; } }, metadata: _metadata }, _basicSetup_initializers, _basicSetup_extraInitializers);
+            __esDecorate(null, null, _content_decorators, { kind: "field", name: "content", static: false, private: false, access: { has: obj => "content" in obj, get: obj => obj.content, set: (obj, value) => { obj.content = value; } }, metadata: _metadata }, _content_initializers, _content_extraInitializers);
+            __esDecorate(null, null, _stripIndent_decorators, { kind: "field", name: "stripIndent", static: false, private: false, access: { has: obj => "stripIndent" in obj, get: obj => obj.stripIndent, set: (obj, value) => { obj.stripIndent = value; } }, metadata: _metadata }, _stripIndent_initializers, _stripIndent_extraInitializers);
+            __esDecorate(null, null, _trim_decorators, { kind: "field", name: "trim", static: false, private: false, access: { has: obj => "trim" in obj, get: obj => obj.trim, set: (obj, value) => { obj.trim = value; } }, metadata: _metadata }, _trim_initializers, _trim_extraInitializers);
+            __esDecorate(null, null, _language_decorators, { kind: "field", name: "language", static: false, private: false, access: { has: obj => "language" in obj, get: obj => obj.language, set: (obj, value) => { obj.language = value; } }, metadata: _metadata }, _language_initializers, _language_extraInitializers);
+            __esDecorate(null, null, _stylesheet_decorators, { kind: "field", name: "stylesheet", static: false, private: false, access: { has: obj => "stylesheet" in obj, get: obj => obj.stylesheet, set: (obj, value) => { obj.stylesheet = value; } }, metadata: _metadata }, _stylesheet_initializers, _stylesheet_extraInitializers);
+            __esDecorate(null, null, _theme_decorators, { kind: "field", name: "theme", static: false, private: false, access: { has: obj => "theme" in obj, get: obj => obj.theme, set: (obj, value) => { obj.theme = value; } }, metadata: _metadata }, _theme_initializers, _theme_extraInitializers);
+            __esDecorate(null, null, _extensions_decorators, { kind: "field", name: "extensions", static: false, private: false, access: { has: obj => "extensions" in obj, get: obj => obj.extensions, set: (obj, value) => { obj.extensions = value; } }, metadata: _metadata }, _extensions_initializers, _extensions_extraInitializers);
             __esDecorate(null, _classDescriptor = { value: _classThis }, _classDecorators, { kind: "class", name: _classThis.name, metadata: _metadata }, null, _classExtraInitializers);
             CodeMirror = _classThis = _classDescriptor.value;
             if (_metadata) Object.defineProperty(_classThis, Symbol.metadata, { enumerable: true, configurable: true, writable: true, value: _metadata });
             __runInitializers(_classThis, _classExtraInitializers);
         }
         /** When true (when the attribute exists), CM's basicSetup will be applied. */
-        basicSetup = (__runInitializers(this, _instanceExtraInitializers), __runInitializers(this, _basicSetup_initializers, false
+        basicSetup = __runInitializers(this, _basicSetup_initializers, false
         /** A string to set the content of the editor to. */
+        );
+        /** A string to set the content of the editor to. */
+        content = (__runInitializers(this, _basicSetup_extraInitializers), __runInitializers(this, _content_initializers, ''
+        /**
+         * When true (default) common indentation will be removed. Useful for
+         * example if the `content` property is being set with a template string and
+         * the content is indented to make the outer code more readable but the
+         * indentation is undersired in the result. Set the attribute
+         * `strip-indent="false"` to disable.
+         */
         ));
-        /** A string to set the content of the editor to. */
-        content = __runInitializers(this, _content_initializers, ''
         /**
          * When true (default) common indentation will be removed. Useful for
          * example if the `content` property is being set with a template string and
@@ -105,37 +120,29 @@ let CodeMirror = (() => {
          * indentation is undersired in the result. Set the attribute
          * `strip-indent="false"` to disable.
          */
-        );
-        /**
-         * When true (default) common indentation will be removed. Useful for
-         * example if the `content` property is being set with a template string and
-         * the content is indented to make the outer code more readable but the
-         * indentation is undersired in the result. Set the attribute
-         * `strip-indent="false"` to disable.
-         */
-        stripIndent = __runInitializers(this, _stripIndent_initializers, true
+        stripIndent = (__runInitializers(this, _content_extraInitializers), __runInitializers(this, _stripIndent_initializers, true
         /**
          * When true (default) trims leading and trailing whitespace from `content`.
          */
-        );
+        ));
         /**
          * When true (default) trims leading and trailing whitespace from `content`.
          */
-        trim = __runInitializers(this, _trim_initializers, true
+        trim = (__runInitializers(this, _stripIndent_extraInitializers), __runInitializers(this, _trim_initializers, true
         /**
          * The language to use. It should be a LanguageSupport object, an empty
          * extension (for plain text mode), or the strings "html", "js", or "text"
          * which are shortcuts for `html()`, `javascript()`, and `[]`, respectively.
          * Defaults to "js".
          */
-        );
+        ));
         /**
          * The language to use. It should be a LanguageSupport object, an empty
          * extension (for plain text mode), or the strings "html", "js", or "text"
          * which are shortcuts for `html()`, `javascript()`, and `[]`, respectively.
          * Defaults to "js".
          */
-        language = __runInitializers(this, _language_initializers, 'text'
+        language = (__runInitializers(this, _trim_extraInitializers), __runInitializers(this, _language_initializers, 'text'
         /**
          * CSS styles to apply in <code-mirror>'s ShadowRoot. Useful for overriding
          * CM styles. Defaults to a style that hard codes the activeLine style to
@@ -149,7 +156,7 @@ let CodeMirror = (() => {
          * - a `<link>` element linking to a CSS file
          * - a `CSSStyleSheet` instance
          */
-        );
+        ));
         /**
          * CSS styles to apply in <code-mirror>'s ShadowRoot. Useful for overriding
          * CM styles. Defaults to a style that hard codes the activeLine style to
@@ -163,16 +170,16 @@ let CodeMirror = (() => {
          * - a `<link>` element linking to a CSS file
          * - a `CSSStyleSheet` instance
          */
-        stylesheet = __runInitializers(this, _stylesheet_initializers, ''
+        stylesheet = (__runInitializers(this, _language_extraInitializers), __runInitializers(this, _stylesheet_initializers, ''
         /** The theme extension to use. Defaults to `noctisLilac`. */
-        );
+        ));
         /** The theme extension to use. Defaults to `noctisLilac`. */
-        theme = __runInitializers(this, _theme_initializers, theme
+        theme = (__runInitializers(this, _stylesheet_extraInitializers), __runInitializers(this, _theme_initializers, theme
         /** Any additional extensions can be supplied here as an array. */
-        );
+        ));
         /** Any additional extensions can be supplied here as an array. */
-        extensions = __runInitializers(this, _extensions_initializers, []);
-        #editorView;
+        extensions = (__runInitializers(this, _theme_extraInitializers), __runInitializers(this, _extensions_initializers, []));
+        #editorView = __runInitializers(this, _extensions_extraInitializers);
         /** The CodeMirror `EditorView` instance. It will be undefined until the `<code-mirror>` element is connected. */
         get editorView() {
             return this.#editorView;
