@@ -87,7 +87,7 @@ class CodeMirror extends Effectful(Element) {
 
 	#container!: HTMLDivElement
 
-	connectedCallback() {
+	override connectedCallback() {
 		super.connectedCallback()
 
 		const basicConf = new Compartment()
@@ -180,7 +180,7 @@ class CodeMirror extends Effectful(Element) {
 		})
 	}
 
-	disconnectedCallback() {
+	override disconnectedCallback() {
 		super.disconnectedCallback()
 		this.stopEffects()
 		this.#editorView!.destroy()
@@ -201,9 +201,9 @@ class CodeMirror extends Effectful(Element) {
 		setContent(this.#editorView!, content)
 	}
 
-	template = () => html`<div id="container" ref=${(e: HTMLDivElement) => (this.#container = e)}></div>`
+	override template = () => html`<div id="container" ref=${(e: HTMLDivElement) => (this.#container = e)}></div>`
 
-	css = /*css*/ `
+	override css = /*css*/ `
 		#container {
 			height: 100%;
 		}
