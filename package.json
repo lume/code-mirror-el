@@ -1,6 +1,6 @@
 {
 	"name": "code-mirror-el",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"description": "A `<code-mirror>` custom element for declarative manipulation of CodeMirror.",
 	"license": "MIT",
 	"homepage": "http://github.com/lume/code-mirror-element#readme",
