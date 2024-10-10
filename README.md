@@ -132,7 +132,7 @@ import {useState, useRef, useEffect} from 'react'
 import 'code-mirror-el'
 // Import JSX types specifically for React (or Preact with React compat enabled in
 // your tsconfig).
-import type {} from 'code-mirror-el/src/CodeMirror.react-jsx'
+import type {} from 'code-mirror-el/dist/CodeMirror.react-jsx'
 
 function SomeComponent() {
 	const [content, setContent] = useState('...')
