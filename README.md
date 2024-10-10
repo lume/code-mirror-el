@@ -115,7 +115,7 @@ function SomeComponent() {
 }
 ```
 
-### With React JSX
+### With React/Preact JSX
 
 To get type checking in React JSX templates, import the React JSX types
 directly, as they will not be automatic like JSX type for Solid.js. This is
@@ -130,7 +130,9 @@ global JSX types for non-React users, we do not automatically register them
 ```tsx
 import {useState, useRef, useEffect} from 'react'
 import 'code-mirror-el'
-import type {} from 'code-mirror-el/src/CodeMirror.react-jsx' // Import types specifically for React
+// Import JSX types specifically for React (or Preact with React compat enabled in
+// your tsconfig).
+import type {} from 'code-mirror-el/src/CodeMirror.react-jsx'
 
 function SomeComponent() {
 	const [content, setContent] = useState('...')
