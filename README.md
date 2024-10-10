@@ -111,17 +111,16 @@ import 'code-mirror-el' // This is all that is needed.
 
 function SomeComponent() {
 	const [content, setContent] = createSignal('...')
-	return <code-mirror basic-setup language="js" content={content} theme={someTheme}></code-mirror>
+	// ...
+	return <code-mirror basic-setup language="js" content={content()} theme={someTheme}></code-mirror>
 }
 ```
 
 ### With React/Preact JSX
 
-To get type checking in React JSX templates, import the React JSX types
-directly, as they will not be automatic like JSX type for Solid.js. This is
-because React JSX types are global, so in order to not automatically pollute
-global JSX types for non-React users, we do not automatically register them
-(tisk tisk tisk, React).
+To get type checking in React JSX templates (or Preact JSX with React compat
+enabled in your tsconfig), import the React JSX types directly, as they will not
+be defined automatically like JSX types for Solid.js.
 
 > [!Note]
 > React still does not yet have syntax for sending non-string data via JS
@@ -136,12 +135,30 @@ import type {} from 'code-mirror-el/dist/CodeMirror.react-jsx'
 
 function SomeComponent() {
 	const [content, setContent] = useState('...')
-	const editorRef = useRef()
-	useEffect(() => {
-		editorRef.current.theme = someTheme
-	}, [])
-	return <code-mirror ref={editorRef} basic-setup language="js" content={content}></code-mirror>
+	// ...
+	return <code-mirror basic-setup language="js" content={content}></code-mirror>
 }
+```
+
+Note that in React 18 and below, all types are simply strings, and for
+multi-word properties use the dash-case attribute name. In React 19 and higher
+with improved Custom Elements support for setting element JS properties, use the
+camelCase prop names with full non-string type support.
+
+React <= 18:
+
+```jsx
+const styleString = '...CSS code here...'
+return <code-mirror basic-setup language="js" content={content} stylesheet={styleString}></code-mirror>
+```
+
+React >= 19:
+
+```jsx
+// This will not work in React 18 and below!
+const styleSheet = new CSSStyleSheet()
+stylesheet.replaceSync('...CSS code here...')
+return <code-mirror basicSetup language="js" content={content} stylesheet={styleSheet}></code-mirror>
 ```
 
 ## `<code-mirror>` API
@@ -160,6 +177,8 @@ function SomeComponent() {
 
 When true (when the attribute exists), CM's `basicSetup` will be applied.
 
+Note, use `basicSetup` in React 19+.
+
 #### `content`
 
 A string to set the content of the editor to.
@@ -171,6 +190,8 @@ example if the `content` property is being set with a template string and
 the content is indented to make the outer code more readable but the
 indentation is undersired in the result inside the editor. Set the attribute
 `strip-indent="false"` to disable.
+
+Note, use `stripIndent` in React 19+.
 
 #### `trim`
 
@@ -199,19 +220,19 @@ The value can be
 
 #### `theme`
 
-Property only. The theme extension to use. Defaults to `noctisLilac`.
+**JS Property only.** The theme extension to use. Defaults to `noctisLilac`.
 
 #### `extensions`
 
-Property only. Any additional CodeMirror Extensions can be supplied here as an array.
+**JS Property only.** Any additional CodeMirror Extensions can be supplied here as an array.
 
 #### `editorView`
 
-Readonly. The CodeMirror `EditorView` instance. It will be undefined until the `<code-mirror>` element is connected.
+**JS Property only.** Readonly. The CodeMirror `EditorView` instance. It will be undefined until the `<code-mirror>` element is connected.
 
 #### `currentContent`
 
-Readonly. Shortcut for getting the current text content as a string.
+**JS Property only.** Readonly. Shortcut for getting the current text content as a string.
 
 ### Children
 
